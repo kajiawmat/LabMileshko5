@@ -17,6 +17,7 @@ namespace LabMilesko5.Views
             {
                 var contex = this.DataContext as MainWindowViewModel;
                 contex.CompNew = contex.CompOld;
+                Close();
             };
 
             this.FindControl<Button>("CancelButton").Click += async delegate
