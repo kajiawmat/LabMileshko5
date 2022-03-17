@@ -1,0 +1,33 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:LabMilesko5.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Width="390" Height="450"
+        mc:Ignorable="d" d:DesignWidth="390" d:DesignHeight="450"
+        x:Class="LabMilesko5.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="LabMilesko5">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="50"/>
+      <RowDefinition Height="50"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Button Name="OpenFile" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Open File</Button>
+    <Button Name="SaveFile" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Save File</Button>
+    <Button Name="SetRegex" Click="MyClickEventHandler" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Set Regex</Button>
+    <TextBox Grid.Row="0" Grid.Column="0" AcceptsReturn="True" TextWrapping="Wrap" Text="{Binding InputText}"></TextBox>
+    <TextBox Grid.Row="0" Grid.Column="1" Focusable="False" TextWrapping="Wrap" Text="{Binding OutputText}"></TextBox>
+  </Grid>
+
+</Window>
